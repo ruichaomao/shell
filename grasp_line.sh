@@ -22,7 +22,7 @@ for i in `ls *dat`;
      wc -l $i | awk {'print $1 - 11'} > $aa.xyz;echo '' >>$aa.xyz
      head -n -3 $i | tail -n +9 >> $aa.xyz
      done
-7#求和，取平均，取极值等
+7#一列数求和，取平均，取极值等
 cat r_270.dat | awk '{sum+=$1} END {print "average=",sum/NR}'     #sum
 cat data|awk '{sum+=$1} END {print "Average = ", sum/NR}'     #average
 cat data|awk 'BEGIN {max = 0} {if ($1>max) max=$1 fi} END {print "Max=", max}'   #max
