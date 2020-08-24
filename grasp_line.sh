@@ -27,4 +27,5 @@ cat r_270.dat | awk '{sum+=$1} END {print "average=",sum/NR}'     #sum
 cat data|awk '{sum+=$1} END {print "Average = ", sum/NR}'     #average
 cat data|awk 'BEGIN {max = 0} {if ($1>max) max=$1 fi} END {print "Max=", max}'   #max
 cat data|awk 'BEGIN {min = 1999999} {if ($1<min) min=$1 fi} END {print "Min=", min}'    #min
+cat rmsd_average.dat | awk '{print $2}' | awk 'BEGIN {min = 1999999} {if ($1<min) min=$1 fi} END {print "Min=", min}'   #min 第二列
 
