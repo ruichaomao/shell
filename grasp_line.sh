@@ -28,4 +28,5 @@ cat data|awk '{sum+=$1} END {print "Average = ", sum/NR}'     #average
 cat data|awk 'BEGIN {max = 0} {if ($1>max) max=$1 fi} END {print "Max=", max}'   #max
 cat data|awk 'BEGIN {min = 1999999} {if ($1<min) min=$1 fi} END {print "Min=", min}'    #min
 cat rmsd_average.dat | awk '{print $2}' | awk 'BEGIN {min = 1999999} {if ($1<min) min=$1 fi} END {print "Min=", min}'   #min 第二列
+awk '{x[NR]=$0; s+=$0; n++} END{a=s/n; for (i in x){ss += (x[i]-a)^2} sd = sqrt(ss/n); print "SD = "sd}' angle_sdt.dat  #求一列数的标准差
 
